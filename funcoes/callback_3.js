@@ -15,7 +15,23 @@ const carrinho = [
     { nome: 'tesoura', qtde: 1, preco: 19.20 }
 ]
 
-const pegaNomes = item => item.nome;
+/* const pegaNomes = item => item.nome;
 const calculaPrecos = item => item.qtde * item.preco;
 console.log(carrinho.map(pegaNomes));
-console.log(carrinho.map(calculaPrecos));
+console.log(carrinho.map(calculaPrecos)); */
+
+
+Array.prototype.meuMap = function(fn){
+    const novoArray = [];
+    for(let i = 0; i < this.length; i++){
+        const resultado = fn(this[i], i, this);
+        novoArray.push(resultado);
+    }
+
+    return novoArray;
+}
+
+const pegaNomes = item => item.nome;
+const calculaPrecos = item => item.qtde * item.preco;
+console.log(carrinho.meuMap(pegaNomes));
+console.log(carrinho.meuMap(calculaPrecos));
