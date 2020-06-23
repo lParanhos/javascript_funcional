@@ -7,7 +7,6 @@ const primeiraLetra = nome => nome[0];
 const letras = nomes.map(primeiraLetra);
 console.log(nomes, letras);
 
-
 const carrinho = [
     { nome: 'caneta', qtde: 10, preco: 7.99 },
     { nome: 'impressora', qtde: 0, preco: 649.50 },
@@ -15,3 +14,8 @@ const carrinho = [
     { nome: 'lapis', qtde: 3, preco: 5.82 },
     { nome: 'tesoura', qtde: 1, preco: 19.20 }
 ]
+
+const pegaNomes = item => item.nome;
+const calculaPrecos = item => item.qtde * item.preco;
+console.log(carrinho.map(pegaNomes));
+console.log(carrinho.map(calculaPrecos));
