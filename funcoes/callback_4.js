@@ -16,3 +16,21 @@ const nomesValidos = carrinho
         .map(getNome);
 
 console.log(nomesValidos);
+
+
+Array.prototype.meuFilter = function(fn){
+    let resultado = []
+    for(let i = 0; i < this.length; i++){
+        let passou = fn(this[i], i, this)
+        if(passou){
+            resultado.push(this[i])
+        }
+    }
+    return resultado
+}
+
+const nomesValidos2 = carrinho
+        .meuFilter(qtdeMaiorQueZero)
+        .map(getNome);
+        
+console.log(nomesValidos2)
