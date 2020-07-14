@@ -1,5 +1,4 @@
 const readline = require("readline");
-const { resolveSoa } = require("dns");
 
 function obterResposta(pergunta){
     const rl = readline.createInterface({
@@ -19,7 +18,7 @@ function obterResposta(pergunta){
 function namorada(){
     console.log("N: Apagar as luzes...")
     console.log("N: Pedir silencio...")
-    console.log("N: Supresa !!!!")
+    console.log("N: Surpresa !!!!")
 }
 
 //observer
