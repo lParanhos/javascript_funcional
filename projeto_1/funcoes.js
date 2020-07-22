@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { resolveSoa } = require('dns');
+const { type } = require('os');
 
 function lerDiretorio(caminho){
     return new Promise((resolve, reject) => {
@@ -40,11 +41,19 @@ function removerSeIncluir(array, padraoTextual){
     return array.filter(el => !el.includes(padraoTextual))
 }
 
+function removerSeApenasNumeros(array){
+    return array.filter(el => {
+        const num = parseInt(el.trim())
+        return num !== num
+    })
+}
+
 
 module.exports = {
     lerDiretorio,
     elementosTerminadosCom,
     lerArquivos,
     removerSeVazio,
-    removerSeIncluir
+    removerSeIncluir,
+    removerSeApenasNumeros
 }
