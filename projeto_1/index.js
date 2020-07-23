@@ -2,6 +2,10 @@ const path = require('path');
 const fn = require('./funcoes');
 
 const caminho = path.join(__dirname, '..', 'dados', 'legendas');
+const simbolos = [
+    '.', '?', '-', ',', '"', '♪', 
+    '_', '<i>', '</i>', '\r', '[', ']'
+]
 
 fn.lerDiretorio(caminho)
     .then(fn.elementosTerminadosCom('.srt'))
@@ -11,4 +15,5 @@ fn.lerDiretorio(caminho)
     .then(fn.removerElementosSeVazio)
     .then(fn.removerElementosSeIncluir("-->"))
     .then(fn.removerElementosSeApenasNumeros)
+    .then(fn.removerSimbolos(simbolos))
     .then(console.log)
