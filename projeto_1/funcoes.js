@@ -1,14 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-const { resolveSoa } = require('dns');
-const { type } = require('os');
 
 function lerDiretorio(caminho){
     return new Promise((resolve, reject) => {
        try {
             const arquivos = fs.readdirSync(caminho);
             const arquivosCompletos = arquivos.map(arquivo => path.join(caminho, arquivo));
-            resolve(arquivos)
+            resolve(arquivosCompletos)
        } catch (error) {
             reject(error)
        }
