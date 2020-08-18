@@ -1,0 +1,11 @@
+{
+  "name": "curso_js_funcional",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lParanhos/javascript_funcional.git",
+  "author": "lParanhos <leandro.paranhos@dextra-sw.com>",
+  "license": "MIT",
+  "dependencies": {
+    "rxjs": "^6.6.2"
+  }
+}
