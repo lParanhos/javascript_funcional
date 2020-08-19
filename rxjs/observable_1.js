@@ -1,4 +1,4 @@
-const { Observable } = require('rxjs');
+const { Observable, observable } = require('rxjs');
 
 const promise = new Promise(resolve => {
     resolve('Promise é bem legal!');
@@ -12,6 +12,8 @@ const obs = new Observable(subscriber => {
     subscriber.next('bem');
     setTimeout(() => {
         subscriber.next('legal!');
+        //indica que não tenho mais dados a serem enviados
+        subscriber.complete();
     }, 1000);
 });
 
